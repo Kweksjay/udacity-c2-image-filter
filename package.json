@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-  "engines" : {
-                "npm" : ">=7.0.0",
-                "node": ">=16.0.0"
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=16.0.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf www/ || true",
-    "check": "npm run clean && tsc && cp package.json www/package.json && npx mkdirp www/tmp/",    
+    "check": "npm run clean && tsc && cp package.json www/package.json && npx mkdirp www/tmp/",
     "build": "npm run clean && tsc && cp package.json www/package.json && npx mkdirp www/tmp && cd www && zip -r Archive.zip . && cd ..",
     "dev": "ts-node-dev --respawn --transpile-only ./src/server.ts"
   },
@@ -33,9 +33,11 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
+    "aws-sdk": "^2.1204.0",
+    "dotenv": "^16.0.1",
     "express": "^4.17.1",
     "jimp": "^0.16.1",
-    "rimraf": "^3.0.2",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "rimraf": "^3.0.2"
   }
 }
